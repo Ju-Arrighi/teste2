@@ -2,11 +2,11 @@ require 'pry-byebug'
 class FlizzBuzz < Array
   def initialize
     super array = (1..100).to_a
-    super flizz(array)
+    super string_to_it(flizz(array))
   end
 
   def flizz(array)
-    array2 = array.map do |n|
+    array.map do |n|
       if (n % 15) == 0
         'FlizzBuzz'
       elsif (n % 5) == 0
@@ -17,6 +17,12 @@ class FlizzBuzz < Array
         n
       end
     end
-    array2
+    # array2
+  end
+
+  def string_to_it(array)
+    array.map do |n|
+      n.to_s
+    end
   end
 end
